@@ -1074,8 +1074,7 @@ void TDM_StatsAll_f(edict_t *ent, matchinfo_t *m_info) {
         teamplayer_t *p = &m_info->teamplayers[order[i]];
         char name[10];
 
-        Q_strncpy(name, p->name, sizeof(name));
-        name[9] = '\0';
+        Q_strncpy(name, p->name, sizeof(name) - 1);
 
         gi.cprintf(ent, PRINT_HIGH, "%-9s %2d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d\n",
             name, p->enemy_kills,
