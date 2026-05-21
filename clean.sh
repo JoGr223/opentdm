@@ -6,5 +6,3 @@ rm -rf release
 make clean
 make CONFIG_FILE=.config-win32 clean
 make CONFIG_FILE=.config-win64 clean
-
-
