@@ -1039,7 +1039,7 @@ void TDM_StatsAll_f(edict_t *ent, matchinfo_t *m_info) {
     int order[256];
 
     // Helper macros
-#define ACC(p, w) ((p)->shots_fired[w] > 0 ? (int)(((float)(p)->shots_hit[w] * 100.0f / (float)(p)->shots_fired[w]) + 0.5f) : 0)
+#define ACC(p, w) ((p)->shots_fired[w] > 0 ? (int)ceil((float)(p)->shots_hit[w] * 100.0f / (float)(p)->shots_fired[w]) : 0)
 #define CAPV(v)   ((v) > 100 ? 100 : (v))
 
     if (tdm_match_status == MM_WARMUP && m_info == &current_matchinfo) {
